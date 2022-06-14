@@ -21,7 +21,6 @@ class CreateCreatorsTable extends Migration
             //$table->string('Notations');
             //$table->string('notationId');
             //$table->string('userId');
-
             $table->timestamps();
         });
     }

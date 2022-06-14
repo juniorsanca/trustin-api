@@ -49,6 +49,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         //
+        return response()->json(auth()->user());
     }
 
     /**
@@ -114,7 +115,7 @@ class UserController extends Controller
     {
         $fields = $request->validate([
             'email' => 'required|string',
-            'password' => 'required|string',
+            'password' => 'required|string ',
 
         ]);
 

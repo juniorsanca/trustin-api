@@ -30,13 +30,15 @@ Route::post('/login', [UserController::class, 'login']);
 
 /*----------[PRIVATE ROUTES]----------*/
 Route::group(['middleware' => ['auth:sanctum']], function () {
-/*-----------[GET ALL CREATORS]-----------*/
+/*GET ALL CREATORS*/
 Route::get('creators', [CreatorController::class, 'index']);
-/*-------------[GET ONE CREATOR]-------------*/
+/*GET ONE CREATOR*/
 Route::get('/creators/{creator}', [CreatorController::class, 'show']);
-/*-------------[SEARCH ONE CREATOR]-------------*/
+/*SEARCH ONE CREATOR*/
 Route::get('/creators/search/{name}', [CreatorController::class, 'search']);
-/*-------------[LOGGOUT]-----------*/
+/*PROFILE*/
+Route::get('/show', [UserController::class, 'show']);
+/*LOGGOUT*/
 Route::post('/logout', [UserController::class, 'logout']);
 
 });
