@@ -85,4 +85,16 @@ class CreatorController extends Controller
     {
         //
     }
+
+    /**
+     *
+     * @param  str $creator
+     * @return \Illuminate\Http\Response
+     */
+    public function search($name)
+    {
+        //
+        return Creator::where('name', 'like', '%' .$name. '%')->get();
+    }
+    
 }

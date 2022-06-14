@@ -24,5 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 /*-----------[GET ALL CREATORS]-----------*/
 Route::get('creators', [CreatorController::class, 'index']);
 /*-------------[GET ONE CREATOR]-------------*/
-
 Route::get('/creators/{creator}', [CreatorController::class, 'show']);
+/*-------------[SEARCH ONE CREATOR]-------------*/
+Route::get('/creators/search/{name}', [CreatorController::class, 'search']);
