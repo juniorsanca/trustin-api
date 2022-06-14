@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\CreatorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
 | API Routes
+
 |--------------------------------------------------------------------------
 |
 | Here is where you can register API routes for your application. These
@@ -19,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/users', function(){
-    return 'All users';
-});
+/*-----------[GET ALL CREATORS]-----------*/
+Route::get('creators', [CreatorController::class, 'index']);
+/*-------------[GET ONE CREATOR]-------------*/
+
+Route::get('/creators/{creator}', [CreatorController::class, 'show']);

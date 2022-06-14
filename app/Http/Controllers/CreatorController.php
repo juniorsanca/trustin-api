@@ -15,6 +15,8 @@ class CreatorController extends Controller
     public function index()
     {
         //
+        return Creator::all();
+
     }
 
     /**
@@ -47,6 +49,7 @@ class CreatorController extends Controller
     public function show(Creator $creator)
     {
         //
+        return Creator::find($creator);
     }
 
     /**
