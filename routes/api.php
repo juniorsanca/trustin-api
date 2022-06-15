@@ -38,6 +38,12 @@ Route::get('/creators/{creator}', [CreatorController::class, 'show']);
 Route::get('/creators/search/{name}', [CreatorController::class, 'search']);
 /*PROFILE*/
 Route::get('/show', [UserController::class, 'show']);
+
+/*EDIT PROFILE*/
+Route::get('/{user}/edit', [UserController::class, 'edit']);
+/*UPDATE USER PROFIL */
+Route::put('/{user}', [UserController::class, 'update']);
+
 /*LOGGOUT*/
 Route::post('/logout', [UserController::class, 'logout']);
 

@@ -61,6 +61,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //
+        return response()->json(auth()->user());
     }
 
     /**
@@ -73,6 +74,10 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //
+        $user = auth()->user();
+        $user->update($request->all());
+
+        return $user;
     }
 
     /**
@@ -121,7 +126,6 @@ class UserController extends Controller
 
        // check email
        $user = User::where('email', $fields['email'])->first();
-
 
        //check password
        if(!$user || !Hash::check($fields['password'], $user->password)){
