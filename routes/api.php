@@ -36,8 +36,9 @@ Route::get('creators', [CreatorController::class, 'index']);
 Route::get('/creators/{creator}', [CreatorController::class, 'show']);
 /*SEARCH ONE CREATOR*/
 Route::get('/creators/search/{name}', [CreatorController::class, 'search']);
+
 /*PROFILE*/
-Route::get('/show', [UserController::class, 'show']);
+Route::get('/user', [UserController::class, 'user']);
 
 /*EDIT PROFILE*/
 Route::get('/{user}/edit', [UserController::class, 'edit']);
