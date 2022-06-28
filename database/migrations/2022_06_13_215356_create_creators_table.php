@@ -14,13 +14,10 @@ class CreateCreatorsTable extends Migration
     public function up()
     {
         Schema::create('creators', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('image');
             $table->string('name');
             $table->string('about');
-            //$table->string('Notations');
-            //$table->string('notationId');
-            //$table->string('userId');
             $table->timestamps();
         });
     }

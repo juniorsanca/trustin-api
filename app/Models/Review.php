@@ -9,12 +9,19 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'creator_id',
+        'review',
+        'rating'
+    ];
        /**
      * Get the creator that owns the review.
      */
     public function creator()
     {
-        return $this->belongsTo('App\Creator');
+        return $this->belongsTo(Creator::class);
+
     }
 
     /**
@@ -22,6 +29,6 @@ class Review extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 }

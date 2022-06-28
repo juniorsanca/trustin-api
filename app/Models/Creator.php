@@ -9,11 +9,21 @@ class Creator extends Model
 {
     use HasFactory;
 
-       /**
-     * Get the reviews of the product.
+    protected $fillable = [
+        'user_id',
+        'creator_id',
+        'review',
+    ];
+
+     /**
+     * Get the reviews the user has made.
      */
     public function reviews()
     {
-        return $this->hasMany('App\Review');
+        return $this->hasMany(Review::class);
+
+        //return $this->hasMany('App\Review');
+        //return Creator::where()
     }
+
 }
